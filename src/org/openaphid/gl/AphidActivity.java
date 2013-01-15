@@ -28,15 +28,20 @@ import android.view.WindowManager;
 
 public class AphidActivity extends Activity {
 
+  private static final boolean USE_JAVASCRIPT_JIT = false; //set to 'true' to enable JavaScript JIT
+
 	private static final String DEV_SERVER_ADDRESS = "http://129.158.217.36:18080"; //replace it with your dev server address
 	private static final String GAME_RESOURCE_BUNDLE = "game.bundle";
 	private static final boolean ENABLE_DEVELOPER_MODE = true;
-	private static final String SCRIPT_FILENAME = "main.js";
+	private static final String SCRIPT_FILENAME = "effect_test.js";
 
 	private AphidGLSurfaceView glSurfaceView;
 
 	static {
-		System.loadLibrary("OpenAphid");
+		if (USE_JAVASCRIPT_JIT)
+			System.loadLibrary("OpenAphid_JIT");
+		else
+			System.loadLibrary("OpenAphid");
 	}
 
 	@Override
