@@ -1,3 +1,12 @@
+## Android v0.2.1f (2012-01-14)
+- Adds `libOpenAphid_JIT.so` which includes a JIT enabled JavaScriptCore.
+
+- Improves rendering performance when a texture has premultiplied alpha values.
+
+- Fixes a crash when loading JNI libs on Android 4.0+ devices by using toolchains from Android NDK r8c.
+
+- Demo app has been refined
+
 ## Android v0.1.5_r1 (2012-07-09)
 
 - Fix incorrect handling of null value in binding APIs
